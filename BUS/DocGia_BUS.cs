@@ -10,6 +10,9 @@ namespace BUS
 {
 
     //SSSSSSDĐ
+
+    //hahaahaahaah
+
     public class DocGia_BUS
     {
         private static DocGia_BUS instance;

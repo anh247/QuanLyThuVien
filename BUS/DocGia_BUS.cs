@@ -15,6 +15,19 @@ namespace BUS
 
 
         //aaaaa
+        //aaaaa
+
+        //aaaaa
+        //aaaaa
+        //aaaaa
+        //aaaaa
+        //aaaaa
+
+
+
+
+
+
         private static DocGia_BUS instance;
         public static DocGia_BUS Instance
         {

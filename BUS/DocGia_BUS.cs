@@ -8,6 +8,8 @@ using DAO;
 using DTO;
 namespace BUS
 {
+
+    //SSSSSSDĐ
     public class DocGia_BUS
     {
         private static DocGia_BUS instance;
@@ -34,9 +36,12 @@ namespace BUS
         }
         public bool xoaTheoMa(DataGridView data)
         {
-            string madocgia= data.SelectedCells[0].OwningRow.Cells["Mã đọc giả"].Value.ToString();
-
-            return DocGia_DAO.Instance.xoaTheoMa(madocgia);
+            if (data.SelectedCells.Count > 0)
+            {
+                string madocgia = data.SelectedCells[0].OwningRow.Cells["Mã đọc giả"].Value.ToString();
+                return DocGia_DAO.Instance.xoaTheoMa(madocgia);
+            }
+            return false;
         }
         public bool sua(DataGridView data)
         {
@@ -52,7 +57,7 @@ namespace BUS
             DocGia_DTO docgia = new DocGia_DTO() { Madocgia = madocgia, Hoten = hoten, Ngaysinh = ngaysinh,Diachi =diachi , Ngaylapthe = ngaylapthe, Matkhau = matkhau };
             return DocGia_DAO.Instance.Sua(madocgiacu,docgia);
         }
-        public bool Them(DataGridView data,string madocgia,string hoten,string namsinh,string diachi,string ngaylapthe)
+        public bool Them(string madocgia,string hoten,string namsinh,string diachi,string ngaylapthe, string matkhau)
         {
             /*DataGridViewRow row = data.SelectedCells[0].OwningRow;
 
@@ -62,28 +67,42 @@ namespace BUS
             string diachi = row.Cells["Địa chỉ"].Value.ToString();
             DateTime ngaylapthe = (DateTime)row.Cells["Ngày lập thẻ"].Value;
             string matkhau = row.Cells["Mật khẩu"].Value.ToString();*/
-          //  DocGia_DTO docgia = new DocGia_DTO() { Madocgia = madocgia, Hoten = hoten, Ngaysinh = ngaysinh, Diachi = diachi, Ngaylapthe = ngaylapthe, Matkhau = matkhau };
-            return DocGia_DAO.Instance.Them (madocgia,hoten,namsinh,diachi,ngaylapthe);
+            //  DocGia_DTO docgia = new DocGia_DTO() { Madocgia = madocgia, Hoten = hoten, Ngaysinh = ngaysinh, Diachi = diachi, Ngaylapthe = ngaylapthe, Matkhau = matkhau };
+            return DocGia_DAO.Instance.Them(madocgia, hoten, namsinh, diachi, ngaylapthe, matkhau);
         }
 
-        public bool Them(DataGridView dgvDSTTdocgia, string text1, string text2, string text3)
-        {
-            throw new NotImplementedException();
-        }
+       // public bool Them(DataGridView dgvDSTTdocgia, string text1, string text2, string text3)
+      //  {
+       //     throw new NotImplementedException();
+      //  }
 
-        public void sua(DataGridView dgvDSTTdocgia, object text1, string text2, string text3, object text4, object text5, object text6)
-        {
-            throw new NotImplementedException();
-        }
+       // public void sua(DataGridView dgvDSTTdocgia, object text1, string text2, string text3, object text4, object text5, object text6)
+      //  {
+       //     throw new NotImplementedException();
+       // }
 
-        public void sua(DataGridView dgvDSTTdocgia, string text1, string text2, string text3)
-        {
-            throw new NotImplementedException();
-        }
+      //  public void sua(DataGridView dgvDSTTdocgia, string text1, string text2, string text3)
+       // {
+       //     throw new NotImplementedException();
+      //  }
 
-        public void sua(DataGridView dgvDSTTdocgia, string text1, string text2, string text3, string text4, string text5)
+      //  public void sua(DataGridView dgvDSTTdocgia, string text1, string text2, string text3, string text4, string text5)
+       // {
+       //     throw new NotImplementedException();
+       // }
+        public bool Sua(string madocgia, string hoten, DateTime ngaysinh, string diachi, DateTime ngaylapthe, string matkhau)
         {
-            throw new NotImplementedException();
+            DocGia_DTO docgia = new DocGia_DTO
+            {
+                Madocgia = madocgia,
+                Hoten = hoten,
+                Ngaysinh = ngaysinh,
+                Diachi = diachi,
+                Ngaylapthe = ngaylapthe,
+                Matkhau = matkhau
+
+            };
+            return DocGia_DAO.Instance.Sua(madocgia, docgia);
         }
     }
 }

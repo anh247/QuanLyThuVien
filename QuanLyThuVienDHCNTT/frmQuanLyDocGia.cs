@@ -28,16 +28,23 @@ namespace QuanLyThuVienDHCNTT
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            if (DocGia_BUS.Instance.Them(dgvDSTTdocgia, txtMadocgia.Text, txthoten.Text, txtdiachi.Text))
+            if (DocGia_BUS.Instance.Them(
+                txtMadocgia.Text,
+                txthoten.Text,
+                dtpNgaysinh.Value.ToString("yyyy-MM-dd"),
+                txtdiachi.Text,
+                txtmk.Text,
+                dtpngaylapthe.Value.ToString("yyyy-MM-dd")))
             {
                 MessageBox.Show("Thêm thành công");
-                load();
+                load(); // Tải lại danh sách
             }
             else
             {
                 MessageBox.Show("Thêm không thành công");
             }
         }
+
 
         private void btnsua_Click(object sender, EventArgs e)
         {
@@ -46,16 +53,30 @@ namespace QuanLyThuVienDHCNTT
             {
                 try
                 {
-                    DocGia_BUS.Instance.sua(dgvDSTTdocgia, txtMadocgia.Text, txthoten.Text,  txtdiachi.Text);
-                    MessageBox.Show("Sửa thành công");
-                    load();
+                    // Gọi hàm sửa từ BUS
+                    if (DocGia_BUS.Instance.Sua(
+                        txtMadocgia.Text,
+                        txthoten.Text,
+                        dtpNgaysinh.Value,
+                        txtdiachi.Text,
+                        dtpngaylapthe.Value,
+                        txtmk.Text))
+                    {
+                        MessageBox.Show("Sửa thành công");
+                        load(); // Tải lại danh sách sau khi sửa
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công");
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Sửa không thành công");
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
                 }
             }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {

@@ -42,13 +42,10 @@ namespace GUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtsoluong = new System.Windows.Forms.NumericUpDown();
             this.numgiahan = new System.Windows.Forms.NumericUpDown();
-            this.cbmadg = new System.Windows.Forms.ComboBox();
             this.dOCGIABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyTVDataSet = new QuanLyThuVienDHCNTT.QuanLyTVDataSet();
-            this.cbmathuthu = new System.Windows.Forms.ComboBox();
             this.tHUTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyTVDataSet2 = new QuanLyThuVienDHCNTT.QuanLyTVDataSet2();
-            this.cbmasach = new System.Windows.Forms.ComboBox();
             this.sACHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyTVDataSet1 = new QuanLyThuVienDHCNTT.QuanLyTVDataSet1();
             this.dtpNgaytra = new System.Windows.Forms.DateTimePicker();
@@ -70,6 +67,9 @@ namespace GUI
             this.dOCGIABindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sACHTableAdapter = new QuanLyThuVienDHCNTT.QuanLyTVDataSet1TableAdapters.SACHTableAdapter();
             this.tHUTHUTableAdapter = new QuanLyThuVienDHCNTT.QuanLyTVDataSet2TableAdapters.THUTHUTableAdapter();
+            this.txtmadg = new System.Windows.Forms.TextBox();
+            this.txtmasach = new System.Windows.Forms.TextBox();
+            this.txtmathuthu = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmuontra)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -182,11 +182,11 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtmathuthu);
+            this.groupBox2.Controls.Add(this.txtmasach);
+            this.groupBox2.Controls.Add(this.txtmadg);
             this.groupBox2.Controls.Add(this.txtsoluong);
             this.groupBox2.Controls.Add(this.numgiahan);
-            this.groupBox2.Controls.Add(this.cbmadg);
-            this.groupBox2.Controls.Add(this.cbmathuthu);
-            this.groupBox2.Controls.Add(this.cbmasach);
             this.groupBox2.Controls.Add(this.dtpNgaytra);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
@@ -220,7 +220,7 @@ namespace GUI
             0,
             0});
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(225, 28);
+            this.txtsoluong.Size = new System.Drawing.Size(225, 24);
             this.txtsoluong.TabIndex = 37;
             this.txtsoluong.Value = new decimal(new int[] {
             1,
@@ -238,20 +238,8 @@ namespace GUI
             0,
             0});
             this.numgiahan.Name = "numgiahan";
-            this.numgiahan.Size = new System.Drawing.Size(225, 28);
+            this.numgiahan.Size = new System.Drawing.Size(225, 24);
             this.numgiahan.TabIndex = 36;
-            // 
-            // cbmadg
-            // 
-            this.cbmadg.DataSource = this.dOCGIABindingSource;
-            this.cbmadg.DisplayMember = "MaDocGia";
-            this.cbmadg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmadg.FormattingEnabled = true;
-            this.cbmadg.Location = new System.Drawing.Point(238, 33);
-            this.cbmadg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbmadg.Name = "cbmadg";
-            this.cbmadg.Size = new System.Drawing.Size(220, 28);
-            this.cbmadg.TabIndex = 35;
             // 
             // dOCGIABindingSource
             // 
@@ -263,18 +251,6 @@ namespace GUI
             this.quanLyTVDataSet.DataSetName = "QuanLyTVDataSet";
             this.quanLyTVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cbmathuthu
-            // 
-            this.cbmathuthu.DataSource = this.tHUTHUBindingSource;
-            this.cbmathuthu.DisplayMember = "MaThuThu";
-            this.cbmathuthu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmathuthu.FormattingEnabled = true;
-            this.cbmathuthu.Location = new System.Drawing.Point(238, 188);
-            this.cbmathuthu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbmathuthu.Name = "cbmathuthu";
-            this.cbmathuthu.Size = new System.Drawing.Size(220, 28);
-            this.cbmathuthu.TabIndex = 34;
-            // 
             // tHUTHUBindingSource
             // 
             this.tHUTHUBindingSource.DataMember = "THUTHU";
@@ -284,18 +260,6 @@ namespace GUI
             // 
             this.quanLyTVDataSet2.DataSetName = "QuanLyTVDataSet2";
             this.quanLyTVDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cbmasach
-            // 
-            this.cbmasach.DataSource = this.sACHBindingSource;
-            this.cbmasach.DisplayMember = "MaSach";
-            this.cbmasach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmasach.FormattingEnabled = true;
-            this.cbmasach.Location = new System.Drawing.Point(238, 134);
-            this.cbmasach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbmasach.Name = "cbmasach";
-            this.cbmasach.Size = new System.Drawing.Size(220, 28);
-            this.cbmasach.TabIndex = 33;
             // 
             // sACHBindingSource
             // 
@@ -314,7 +278,7 @@ namespace GUI
             this.dtpNgaytra.Location = new System.Drawing.Point(734, 135);
             this.dtpNgaytra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpNgaytra.Name = "dtpNgaytra";
-            this.dtpNgaytra.Size = new System.Drawing.Size(220, 28);
+            this.dtpNgaytra.Size = new System.Drawing.Size(220, 24);
             this.dtpNgaytra.TabIndex = 32;
             this.dtpNgaytra.Value = new System.DateTime(2017, 5, 21, 0, 0, 0, 0);
             // 
@@ -324,7 +288,7 @@ namespace GUI
             this.label9.Location = new System.Drawing.Point(585, 198);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 20);
+            this.label9.Size = new System.Drawing.Size(91, 17);
             this.label9.TabIndex = 31;
             this.label9.Text = "Ngày gia hạn";
             // 
@@ -334,7 +298,7 @@ namespace GUI
             this.label5.Location = new System.Drawing.Point(585, 142);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 31;
             this.label5.Text = "Ngày trả";
             // 
@@ -347,7 +311,7 @@ namespace GUI
             this.cbmtrangthai.Location = new System.Drawing.Point(730, 87);
             this.cbmtrangthai.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbmtrangthai.Name = "cbmtrangthai";
-            this.cbmtrangthai.Size = new System.Drawing.Size(220, 28);
+            this.cbmtrangthai.Size = new System.Drawing.Size(220, 25);
             this.cbmtrangthai.TabIndex = 30;
             this.cbmtrangthai.Tag = "";
             // 
@@ -358,7 +322,7 @@ namespace GUI
             this.dtpngaynuon.Location = new System.Drawing.Point(238, 83);
             this.dtpngaynuon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpngaynuon.Name = "dtpngaynuon";
-            this.dtpngaynuon.Size = new System.Drawing.Size(220, 28);
+            this.dtpngaynuon.Size = new System.Drawing.Size(220, 24);
             this.dtpngaynuon.TabIndex = 23;
             this.dtpngaynuon.Value = new System.DateTime(2017, 5, 21, 0, 0, 0, 0);
             this.dtpngaynuon.ValueChanged += new System.EventHandler(this.dtpngaynuon_ValueChanged);
@@ -369,7 +333,7 @@ namespace GUI
             this.label6.Location = new System.Drawing.Point(87, 134);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.Size = new System.Drawing.Size(67, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã sách ";
             // 
@@ -379,7 +343,7 @@ namespace GUI
             this.label2.Location = new System.Drawing.Point(87, 188);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mã Thủ Thư";
             // 
@@ -389,7 +353,7 @@ namespace GUI
             this.label8.Location = new System.Drawing.Point(816, 276);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 20);
+            this.label8.Size = new System.Drawing.Size(93, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Nhà xuất bản";
             // 
@@ -399,7 +363,7 @@ namespace GUI
             this.label1.Location = new System.Drawing.Point(87, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã độc giả";
             // 
@@ -409,7 +373,7 @@ namespace GUI
             this.label3.Location = new System.Drawing.Point(87, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ngày mượn";
             // 
@@ -419,7 +383,7 @@ namespace GUI
             this.label4.Location = new System.Drawing.Point(585, 90);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 20);
+            this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Trạng thái ";
             // 
@@ -429,7 +393,7 @@ namespace GUI
             this.label7.Location = new System.Drawing.Point(585, 37);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.Size = new System.Drawing.Size(69, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "Số lượng ";
             // 
@@ -440,7 +404,7 @@ namespace GUI
             this.label12.Location = new System.Drawing.Point(273, 26);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(151, 23);
+            this.label12.Size = new System.Drawing.Size(121, 19);
             this.label12.TabIndex = 54;
             this.label12.Text = "Nhập mã cần tìm";
             // 
@@ -482,9 +446,36 @@ namespace GUI
             // 
             this.tHUTHUTableAdapter.ClearBeforeFill = true;
             // 
+            // txtmadg
+            // 
+            this.txtmadg.Location = new System.Drawing.Point(238, 31);
+            this.txtmadg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtmadg.Multiline = true;
+            this.txtmadg.Name = "txtmadg";
+            this.txtmadg.Size = new System.Drawing.Size(208, 29);
+            this.txtmadg.TabIndex = 53;
+            // 
+            // txtmasach
+            // 
+            this.txtmasach.Location = new System.Drawing.Point(238, 131);
+            this.txtmasach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtmasach.Multiline = true;
+            this.txtmasach.Name = "txtmasach";
+            this.txtmasach.Size = new System.Drawing.Size(208, 29);
+            this.txtmasach.TabIndex = 54;
+            // 
+            // txtmathuthu
+            // 
+            this.txtmathuthu.Location = new System.Drawing.Point(238, 176);
+            this.txtmathuthu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtmathuthu.Multiline = true;
+            this.txtmathuthu.Name = "txtmathuthu";
+            this.txtmathuthu.Size = new System.Drawing.Size(208, 29);
+            this.txtmathuthu.TabIndex = 55;
+            // 
             // frmMuonTraSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1303, 648);
@@ -535,9 +526,6 @@ namespace GUI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown txtsoluong;
         private System.Windows.Forms.NumericUpDown numgiahan;
-        private System.Windows.Forms.ComboBox cbmadg;
-        private System.Windows.Forms.ComboBox cbmathuthu;
-        private System.Windows.Forms.ComboBox cbmasach;
         private System.Windows.Forms.DateTimePicker dtpNgaytra;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
@@ -563,5 +551,8 @@ namespace GUI
         private QuanLyThuVienDHCNTT.QuanLyTVDataSet2 quanLyTVDataSet2;
         private System.Windows.Forms.BindingSource tHUTHUBindingSource;
         private QuanLyThuVienDHCNTT.QuanLyTVDataSet2TableAdapters.THUTHUTableAdapter tHUTHUTableAdapter;
+        private System.Windows.Forms.TextBox txtmathuthu;
+        private System.Windows.Forms.TextBox txtmasach;
+        private System.Windows.Forms.TextBox txtmadg;
     }
 }

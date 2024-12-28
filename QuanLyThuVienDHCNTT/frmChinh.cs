@@ -50,6 +50,7 @@ namespace GUI
 
         private void quảnLýThôngTinĐọcGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //GUI.frmQLTTDocGia f = new frmQLTTDocGia();
             GUI.frmQLTTDocGia f = new frmQLTTDocGia();
             f.MdiParent = this;
             f.Show();

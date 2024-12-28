@@ -59,18 +59,14 @@ namespace DAO
         {
            // string query = "update DOCGIA set HoTen = N'" + docgia.Hoten  + "',NgaySinh='" + docgia.Ngaysinh + "',DiaChi=N'" + docgia.Diachi  + "',NgayLapThe='" + docgia.Ngaylapthe  + "' where MaDocGia ='" + madocgia + "'";
             string query = "update DOCGIA set HoTen= @hoten , NgaySinh= @ngaysinh , DiaChi= @diachi , NGAYLAPTHE = @ngaylapthe , MatKhau= @matkhau where MaDocGia = @madocgia ";
-            object[] para = new object[] {docgia.Hoten, docgia.Ngaysinh, docgia.Diachi, docgia.Ngaylapthe, docgia.Matkhau, madocgia };
-            if(DataProvider.Instance.ExcuteNonQuery(query, para) > 0)
-            {
-                return true;
-            }
-            return false;
+            object[] para = {docgia.Hoten, docgia.Ngaysinh, docgia.Diachi, docgia.Ngaylapthe, docgia.Matkhau, madocgia };
+            return DataProvider.Instance.ExcuteNonQuery(query, para) > 0;
         }
-        public bool Them(string madocgia, string hoten, string namsinh, string diachi, string ngaylapthe)
+        public bool Them(string madocgia, string hoten, string namsinh, string diachi, string ngaylapthe,string matkhau)
         {
             // string query = "update DOCGIA set HoTen = N'" + docgia.Hoten  + "',NgaySinh='" + docgia.Ngaysinh + "',DiaChi=N'" + docgia.Diachi  + "',NgayLapThe='" + docgia.Ngaylapthe  + "' where MaDocGia ='" + madocgia + "'";
             string query = "insert into DOCGIA values ( @madocgia , @hoten , @ngaysinh , @diachi , @ngaylapthe , @matkhau )";
-            object[] para = new object[] { madocgia, hoten, namsinh, diachi, ngaylapthe ,namsinh};
+            object[] para = new object[] { madocgia, hoten, namsinh, diachi, ngaylapthe ,namsinh,matkhau};
             if (DataProvider.Instance.ExcuteNonQuery(query, para) > 0)
             {
                 return true;

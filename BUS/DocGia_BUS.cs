@@ -8,13 +8,13 @@ using DAO;
 using DTO;
 namespace BUS
 {
-
-    //SSSSSSDĐ
-
-    //hahaahaahaah
+   
 
     public class DocGia_BUS
     {
+
+
+        //aaaaa
         private static DocGia_BUS instance;
         public static DocGia_BUS Instance
         {

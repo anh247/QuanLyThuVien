@@ -91,6 +91,7 @@ namespace GUI
             int Ngt = int.Parse(DateTime.Now.Year.ToString());
             int nn = int.Parse(nams.Year.ToString());
             int tuoi = Ngt - nn;
+           // string matkhau = ngaysinh;
             if (ngaysinhcheck >= ngaylapthecheck)
             {
                 MessageBox.Show("Ngày lập thẻ phải sau ngày sinh");
@@ -114,7 +115,7 @@ namespace GUI
             {
                 try
                 {
-                    DocGia_BUS.Instance.Them(dgvDSTTdocgia, txtmdg.Text,txthoten.Text,ngaysinh, txtdiachi.Text,ngaylapthe);
+                    DocGia_BUS.Instance.Them(dgvDSTTdocgia, txtmdg.Text,txthoten.Text,ngaysinh, txtdiachi.Text,ngaylapthe,ngaysinh);
                     MessageBox.Show("Thêm thành công");
                     errorProvider1.Clear();
                     load();

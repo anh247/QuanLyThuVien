@@ -24,11 +24,13 @@ namespace QuanLyThuVienDHCNTT
         private void frmQuanLyDocGia_Load(object sender, EventArgs e)
         {
             load();
+            
         }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (DocGia_BUS.Instance.Them(
+                dgvDSTTdocgia,
                 txtMadocgia.Text,
                 txthoten.Text,
                 dtpNgaysinh.Value.ToString("yyyy-MM-dd"),
@@ -55,12 +57,15 @@ namespace QuanLyThuVienDHCNTT
                 {
                     // Gọi hàm sửa từ BUS
                     if (DocGia_BUS.Instance.Sua(
+                       dgvDSTTdocgia,
                         txtMadocgia.Text,
-                        txthoten.Text,
+                         txthoten.Text,
                         dtpNgaysinh.Value,
                         txtdiachi.Text,
+                       //  txtmk.Text,
                         dtpngaylapthe.Value,
-                        txtmk.Text))
+                        txtmk.Text
+                        ))
                     {
                         MessageBox.Show("Sửa thành công");
                         load(); // Tải lại danh sách sau khi sửa
@@ -127,6 +132,11 @@ namespace QuanLyThuVienDHCNTT
         }
 
         private void txtMadocgia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtmk_Click(object sender, EventArgs e)
         {
 
         }

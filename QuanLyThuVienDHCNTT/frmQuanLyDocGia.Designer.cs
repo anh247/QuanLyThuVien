@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtmk = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.dtpngaylapthe = new System.Windows.Forms.DateTimePicker();
             this.txtdiachi = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
@@ -49,8 +52,7 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.dgvDSTTdocgia = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtmk = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTTdocgia)).BeginInit();
             this.SuspendLayout();
@@ -80,11 +82,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN ĐỘC GIẢ";
             // 
+            // txtmk
+            // 
+            this.txtmk.Location = new System.Drawing.Point(583, 66);
+            this.txtmk.Name = "txtmk";
+            this.txtmk.Size = new System.Drawing.Size(148, 26);
+            this.txtmk.TabIndex = 33;
+            this.txtmk.Click += new System.EventHandler(this.txtmk_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(471, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 19);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Mật khẩu :";
+            // 
             // dtpngaylapthe
             // 
             this.dtpngaylapthe.CustomFormat = "";
             this.dtpngaylapthe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpngaylapthe.Location = new System.Drawing.Point(583, 91);
+            this.dtpngaylapthe.Location = new System.Drawing.Point(583, 100);
             this.dtpngaylapthe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpngaylapthe.Name = "dtpngaylapthe";
             this.dtpngaylapthe.Size = new System.Drawing.Size(148, 26);
@@ -175,7 +194,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(452, 97);
+            this.label10.Location = new System.Drawing.Point(452, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 19);
             this.label10.TabIndex = 11;
@@ -292,29 +311,17 @@
             this.dgvDSTTdocgia.TabIndex = 64;
             this.dgvDSTTdocgia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTTdocgia_CellContentClick);
             // 
-            // label4
+            // contextMenuStrip1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(471, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 19);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Mật khẩu :";
-            // 
-            // txtmk
-            // 
-            this.txtmk.Location = new System.Drawing.Point(583, 61);
-            this.txtmk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtmk.Name = "txtmk";
-            this.txtmk.Size = new System.Drawing.Size(148, 26);
-            this.txtmk.TabIndex = 33;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // frmQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(820, 535);
+            this.ClientSize = new System.Drawing.Size(844, 535);
             this.Controls.Add(this.dgvDSTTdocgia);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnExcel);
@@ -325,7 +332,7 @@
             this.Controls.Add(this.txtTK);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmQuanLyDocGia";
             this.Text = "frmQuanLyDocGia";
             this.Load += new System.EventHandler(this.frmQuanLyDocGia_Load);
@@ -360,7 +367,8 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.DataGridView dgvDSTTdocgia;
-        private System.Windows.Forms.TextBox txtmk;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtmk;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

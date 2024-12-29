@@ -39,7 +39,7 @@ namespace GUI
             txtsoluong.Clear();
             txtsotrang.Clear();
             txttgia.Clear();
-            cbmaloai.Text = "ML1";
+            txtmaloai.Clear();
             dtpNgaynhap.Value = DateTime.Today;
             txtms.Focus();
             txtlanxb.Clear();
@@ -80,7 +80,7 @@ namespace GUI
             {
                 try
                 {
-                    ThongTinSach_BUS.Instance.sua(dgvdsthongtinsach, txtms.Text, txtnhande.Text, txtsotrang.Text, txtsoluong.Text, namxb, txtlanxb.Text, cbmaloai.Text, txtnhaxb.Text, txttgia.Text, ngaynhap);
+                    ThongTinSach_BUS.Instance.sua(dgvdsthongtinsach, txtms.Text, txtnhande.Text, txtsotrang.Text, txtsoluong.Text, namxb, txtlanxb.Text, txtmaloai.Text, txtnhaxb.Text, txttgia.Text, ngaynhap);
                     MessageBox.Show("Sửa thành công");
                     load();
                 }
@@ -104,7 +104,7 @@ namespace GUI
                 txtsoluong.Text = row.Cells[3].Value.ToString();
                 dtNamXB.Text = row.Cells[4].Value.ToString();
                 txtlanxb.Text = row.Cells[5].Value.ToString();
-                cbmaloai.Text = row.Cells[6].Value.ToString();
+                txtmaloai.Text = row.Cells[6].Value.ToString();
                 txtnhaxb.Text = row.Cells[7].Value.ToString();
                 txttgia.Text = row.Cells[8].Value.ToString();
                 dtpNgaynhap.Text = row.Cells[9].Value.ToString();
@@ -121,7 +121,7 @@ namespace GUI
             }
             try
             {
-                ThongTinSach_BUS.Instance.Them(dgvdsthongtinsach, txtms.Text, txtnhande.Text, txtsotrang.Text, txtsoluong.Text, namxb, txtlanxb.Text, cbmaloai.Text, txtnhaxb.Text, txttgia.Text, ngaynhap);
+                ThongTinSach_BUS.Instance.Them(dgvdsthongtinsach, txtms.Text, txtnhande.Text, txtsotrang.Text, txtsoluong.Text, namxb, txtlanxb.Text, txtmaloai.Text, txtnhaxb.Text, txttgia.Text, ngaynhap);
                 MessageBox.Show("Thêm thành công");
                 load();
             }
@@ -167,55 +167,7 @@ namespace GUI
 
         }
 
-        //}
-        /* private void ToExcel(DataGridView dataGridView1, string fileName)
-         {
-             Microsoft.Office.Interop.Excel.Application excel;
-             Microsoft.Office.Interop.Excel.Workbook workbook;
-             Microsoft.Office.Interop.Excel.Worksheet worksheet;
-
-             try
-             {
-                 excel = new Microsoft.Office.Interop.Excel.Application();
-                 excel.Visible = false;
-                 excel.DisplayAlerts = false;
-
-                 workbook = excel.Workbooks.Add(Type.Missing);
-
-                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                 worksheet.Name = "ThongTinSach";
-
-                 // export header
-                 for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                 {
-                     worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
-                 }
-
-                 // export content
-                 for (int i = 0; i < dataGridView1.RowCount; i++)
-                 {
-                     for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                     {
-                         worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                     }
-                 }
-
-                 // save workbook
-                 workbook.SaveAs(fileName);
-                 workbook.Close();
-                 excel.Quit();
-                 MessageBox.Show("Tạo file excel thành công ");
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
-             finally
-             {
-                 workbook = null;
-                 worksheet = null;
-             }
-         }*/
+       
     }
     }
     

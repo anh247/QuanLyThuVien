@@ -13,9 +13,7 @@ namespace BUS
     public class DocGia_BUS
     {
 
-
-
-
+//xoa rôi
 
         private static DocGia_BUS instance;
         public static DocGia_BUS Instance

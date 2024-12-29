@@ -26,7 +26,7 @@ namespace QuanLyThuVienDHCNTT
             load();
             
         }
-
+        //thu nhe
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (DocGia_BUS.Instance.Them(
